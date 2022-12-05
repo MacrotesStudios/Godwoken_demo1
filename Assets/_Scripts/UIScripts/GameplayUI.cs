@@ -69,8 +69,8 @@ public class GameplayUI : MonoBehaviour
         mintKeyButton.interactable = true;
 
         //Showing Image
-        //yield return new WaitForSeconds(3f);
-        //ShowNFTImage();
+        yield return new WaitForSeconds(3f);
+        ShowNFTImage();
     }
 
     public void ShowNFTImage()
