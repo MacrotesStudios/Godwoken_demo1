@@ -71,7 +71,7 @@ namespace Godwoken
 
         public void GetExampleNFTs(string contractAddress, UnityAction<List<Sprite>> onComplete)
         {
-            internalErrorsText.text = "Inside GetExampleNFTs function";
+            //internalErrorsText.text = "Inside GetExampleNFTs function";
             StartCoroutine(GetExampleNFTsCoroutine(contractAddress, onComplete));
         }
 
@@ -164,13 +164,13 @@ namespace Godwoken
 
         private IEnumerator GetExampleNFTsCoroutine(string contractAddress, UnityAction<List<Sprite>> onComplete)
         {
-            internalErrorsText.text = "Inside GetExampleNFTs coroutine";
+            //internalErrorsText.text = "Inside GetExampleNFTs coroutine";
             var nftsOfUser = new ERC721ExampleUnityRequest(GetAddress(), GetUnityRpcRequestClientFactory());
             yield return nftsOfUser.GetAllNFTUris(contractAddress, GetAddress());
            
             if (nftsOfUser.Exception != null)
             {
-                internalErrorsText.text = "nftsOfUser.exception is not null";
+                //internalErrorsText.text = "nftsOfUser.exception is not null";
                 yield break;
             }
             if (nftsOfUser.Result != null)
@@ -186,7 +186,7 @@ namespace Godwoken
 
                 if (metadataUnityRequest.Result != null)
                 {
-                    internalErrorsText.text = "Metadata for unity request is not null";
+                    //internalErrorsText.text = "Metadata for unity request is not null";
                     var sprites = new List<Sprite>();
                     var textureAssigner = new ImageDownloaderTextureAssigner();
                     int imageCount = 0;
@@ -194,14 +194,14 @@ namespace Godwoken
                     {
                         if (string.IsNullOrEmpty(item.image))
                         {
-                            internalErrorsText.text = "NFT image cannot load(error in json information)";
+                            //internalErrorsText.text = "NFT image cannot load(error in json information)";
                             continue;
                         }
 
                         yield return textureAssigner.DownloadAndSetImageTexture(item.image, sprite =>
                             {
                                 imageCount++;
-                                internalErrorsText.text = "Populating sprites list with nft images" + imageCount.ToString(); ;
+                                //internalErrorsText.text = "Populating sprites list with nft images" + imageCount.ToString(); ;
                                 sprites.Add(sprite);
                             }
                         );

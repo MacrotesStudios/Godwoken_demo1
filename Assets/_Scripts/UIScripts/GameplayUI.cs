@@ -66,10 +66,10 @@ public class GameplayUI : MonoBehaviour
         yield return transaction.SignAndSendTransaction(mintFunction, ERC721ExampleDeployment.ADDRESS);
 
         errorText.text = "Transation is signed and sent. ERC721 Address: " + ERC721ExampleDeployment.ADDRESS.ToString();
-        mintKeyButton.interactable = true;
+
 
         //Showing Image
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         ShowNFTImage();
     }
 
@@ -79,7 +79,7 @@ public class GameplayUI : MonoBehaviour
         metamaskController.GetExampleNFTs(ERC721ExampleDeployment.ADDRESS, (List<Sprite> sprites) =>
         {         
             keyImage.sprite = sprites[sprites.Count - 1];
-            //mintKeyButton.interactable = true;
+            mintKeyButton.interactable = true;
         });
     }
 }

@@ -19,7 +19,8 @@ namespace ERC721Example.Contracts.ERC721Example.ContractDefinition
         public ERC721ExampleDeployment() : base(BYTECODE) { }
         public ERC721ExampleDeployment(string byteCode) : base(byteCode) { }
 
-        public static string HASH = "0x609ad613270ef5188a57b70d61f47a8a6be15627f3ee7868d41ccd976921e36e";
+        //public static string HASH = "0x609ad613270ef5188a57b70d61f47a8a6be15627f3ee7868d41ccd976921e36e";
+        public static string HASH = "0x1832fcc61a259ae845d6f33ed99ed310644b67c2a6a5f30a72b8c2b63b29b265";
         public static string ADDRESS;
     }
 
